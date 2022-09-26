@@ -19,6 +19,6 @@ namespace Business.Abstract
         public IDataResult<List<Announcement>> getAll();
         public IDataResult<Announcement> getById(int id);
         public IDataResult<List<Announcement>> getByActiveAnnouncement();
-        public IDataResult<List<Announcement>> getByActiveInAnnouncement();
+        public IDataResult<List<Announcement>> getByInActiveAnnouncement();
     }
 }

@@ -41,7 +41,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Announcement>>(_announcementDal.GetAll(p => p.StartDate <= DateTime.Now).Where(p=>p.status==true).ToList());
         }
 
-        public IDataResult<List<Announcement>> getByActiveInAnnouncement()
+        public IDataResult<List<Announcement>> getByInActiveAnnouncement()
         {
             return new SuccessDataResult<List<Announcement>>(_announcementDal.GetAll(p => p.StartDate >= DateTime.Now).Where(p => p.status == false).ToList());
         }

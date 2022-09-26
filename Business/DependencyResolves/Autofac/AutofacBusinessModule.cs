@@ -25,7 +25,8 @@ namespace Business.DependencyResolves.Autofac
             //SingleInstance ben ekledim
             builder.RegisterType<UserManager>().As<IUserService>();
             builder.RegisterType<EfUserDal>().As<IUserDal>();
-
+            builder.RegisterType<AnnouncementManager>().As<IAnnouncementService>();
+            builder.RegisterType<EfAnnouncementDal>().As<IAnnouncementDal>();
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();

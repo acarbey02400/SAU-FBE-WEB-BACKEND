@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Announcement:IEntity
+    public class AnnouncementCategory:IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime StopDate { get; set; }
-        public bool status { get; set; }
+        public int AnnouncementId { get; set; }
         public int CategoryId { get; set; }
 
     }
