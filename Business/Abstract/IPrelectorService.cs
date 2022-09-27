@@ -12,7 +12,7 @@ namespace Business.Abstract
     public interface IPrelectorService
     {
         public IResult add(Prelector prelector);
-        User GetByMail(string email);
+        public IDataResult<Prelector> GetByMail(string email);
         public IResult update(Prelector prelector);
         public IResult delete(Prelector prelector);
         public IDataResult<List<Prelector>> getAll();

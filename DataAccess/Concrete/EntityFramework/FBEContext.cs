@@ -13,7 +13,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=FBEData;Trusted_Connection=true");
         }
 
         public DbSet<OperationClaim> OperationClaims { get; set; }
@@ -27,5 +27,6 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Program> Programs { get; set; }
         public DbSet<UserType> UserTypes { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        public DbSet<Position> Positions { get; set; }
     }
 }
