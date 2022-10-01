@@ -2,6 +2,7 @@
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,11 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Program>>(_programDal.GetAll(p => p.CategoryId == id));
         }
 
+        public IDataResult<List<Program>> getByDepartmentId(int id)
+        {
+           return new SuccessDataResult<List<Program>>(_programDal.GetAll(p => p.DepartmentId == id));
+        }
+
         public IDataResult<List<Program>> getByEbsId(int id)
         {
             return new SuccessDataResult<List<Program>>(_programDal.GetAll(p => p.EbsId == id));
@@ -53,6 +59,11 @@ namespace Business.Concrete
         public IDataResult<Program> getById(int id)
         {
             return new SuccessDataResult<Program>(_programDal.Get(p => p.Id == id));
+        }
+
+        public IDataResult<List<ProgramDetailDto>> getByProgramDetail()
+        {
+            return new SuccessDataResult<List<ProgramDetailDto>>();
         }
 
         public IResult update(Program program)

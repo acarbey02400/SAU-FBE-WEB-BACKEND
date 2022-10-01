@@ -7,13 +7,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class PrelectorPosition:IEntity
+    public class Department:IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int ProgramId { get; set; }
-        public int PrelectorId { get; set; }
-        public int PositionId { get; set; }
-
+        public string Description { get; set; }
     }
 }

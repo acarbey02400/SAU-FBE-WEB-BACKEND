@@ -17,6 +17,6 @@ namespace Business.Abstract
         public IResult delete(Prelector prelector);
         public IDataResult<List<Prelector>> getAll();
         public IDataResult<Prelector> getById(int id);
-        public IDataResult<List<Prelector>> getByPrelectorPositionId(int PrelectorPositionId);
+       
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,7 @@ namespace Business.Abstract
         public IResult delete(PrelectorPosition pp);
         public IDataResult<List<PrelectorPosition>> getAll();
         public IDataResult<PrelectorPosition> getById(int id);
+        public IDataResult<List<PrelectorPositionDto>> getByPrelectorPositionDetails();
+        public IDataResult<List<PrelectorPositionDto>> getByPrelectorPositionDetailsForProgramId(int programId);
     }
 }

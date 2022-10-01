@@ -46,11 +46,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Prelector>(_prelectorDal.Get(p => p.EMail == email));
         }
 
-        public IDataResult<List<Prelector>> getByPrelectorPositionId(int PrelectorPositionId)
-        {
-            return new SuccessDataResult<List<Prelector>>
-                (_prelectorDal.GetAll(p => p.PrelectorPositionId == PrelectorPositionId));
-        }
+       
 
         public IResult update(Prelector prelector)
         {

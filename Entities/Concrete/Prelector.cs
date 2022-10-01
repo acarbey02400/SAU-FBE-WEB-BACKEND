@@ -11,9 +11,9 @@ namespace Entities.Concrete
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int PrelectorPositionId { get; set; }
         public string EMail { get; set; }
         public string Url { get; set; }
+
 
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Core.DataAccess.EntityFramework;
-using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfAnnouncementCategoryDal:EfEntityRepositoryBase<AnnouncementCategory,FBEContext>,IAnnouncementCategoryDal
+    public class EfDepartmentDal:EfEntityRepositoryBase<Department,FBEContext>
     {
     }
 }

@@ -2,6 +2,7 @@
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,16 @@ namespace Business.Concrete
         public IDataResult<PrelectorPosition> getById(int id)
         {
             return new SuccessDataResult<PrelectorPosition>(_prelectorPositionDal.Get(p => p.Id == id));
+        }
+
+        public IDataResult<List<PrelectorPositionDto>> getByPrelectorPositionDetails()
+        {
+            return new SuccessDataResult<List<PrelectorPositionDto>>(_prelectorPositionDal.GetByPrelectorPositionDetails());
+        }
+
+        public IDataResult<List<PrelectorPositionDto>> getByPrelectorPositionDetailsForProgramId(int programId)
+        {
+            return new SuccessDataResult<List<PrelectorPositionDto>>(_prelectorPositionDal.GetByPrelectorPositionDetailsForProgramId(programId));
         }
 
         public IResult update(PrelectorPosition pp)

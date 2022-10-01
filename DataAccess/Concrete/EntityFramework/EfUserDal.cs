@@ -13,7 +13,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         public List<OperationClaim> GetClaims(User user)
         {
-            using (var context = new NorthwindContext())
+            using (var context = new FBEContext())
             {
                 var result = from operationClaim in context.OperationClaims
                              join userOperationClaim in context.UserOperationClaims
