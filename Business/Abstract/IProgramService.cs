@@ -20,6 +20,7 @@ namespace Business.Abstract
         public IDataResult<List<Program>> getByAcademicDegreeId(int id);
         public IDataResult<List<Program>> getByEbsId(int id);
         public IDataResult<List<Program>> getByCategoryId(int id);
+        public IDataResult<List<Program>> getByApplicationConditionId(int id);
         public IDataResult<List<Program>> getByDepartmentId(int id);
         public IDataResult<List<ProgramDetailDto>> getByProgramDetail();
     }

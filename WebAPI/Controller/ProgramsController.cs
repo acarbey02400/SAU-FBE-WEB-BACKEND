@@ -38,6 +38,19 @@ namespace WebAPI.Controller
                 return BadRequest(result);
             }
         }
+        [HttpGet("getbyapplicationconditionid")]
+        public IActionResult GetByapplicationConditionId(int Id)
+        {
+            var result = _programService.getByApplicationConditionId(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
 
         [HttpGet("getbyacademicdegreeid")]
         public IActionResult GetByAcademicDegreeId(int Id)

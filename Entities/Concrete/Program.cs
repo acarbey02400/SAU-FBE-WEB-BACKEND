@@ -16,7 +16,7 @@ namespace Entities.Concrete
         public string Description { get; set; }
         public int CategoryId { get; set; }
         public int DepartmentId { get; set; }
-
+        public int ApplicationConditionId { get; set; }
 
     }
 }

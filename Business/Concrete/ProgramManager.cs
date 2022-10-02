@@ -41,6 +41,11 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Program>>(_programDal.GetAll(p => p.academicDegreeId == id));
         }
 
+        public IDataResult<List<Program>> getByApplicationConditionId(int id)
+        {
+            return new SuccessDataResult<List<Program>>(_programDal.GetAll(p=>p.ApplicationConditionId == id));
+        }
+
         public IDataResult<List<Program>> getByCategoryId(int id)
         {
             return new SuccessDataResult<List<Program>>(_programDal.GetAll(p => p.CategoryId == id));
