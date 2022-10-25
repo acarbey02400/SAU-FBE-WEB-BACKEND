@@ -1,7 +1,9 @@
 ﻿@page
+@using WebAPI.Controller
 @model IndexModel
 @{
 	ViewData["Title"] = "Home page";
+	string _data = "";
 }
 
 <!DOCTYPE html>
@@ -13,7 +15,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Porto - Responsive HTML5 Template</title>
+	
 
 	<meta name="keywords" content="HTML5 Template" />
 	<meta name="description" content="Porto - Responsive HTML5 Template">
@@ -116,9 +118,9 @@
 													<nav class="collapse">
 														<ul class="nav nav-pills" id="mainNav">
 															<li class="dropdown dropdown-full-color dropdown-light">
-																<a class="dropdown-item dropdown-toggle"
-																   href="index.html">
-																	Home
+																<a class="dropdown-item dropdown-toggle" id="navss"
+																   href="/enstitu">
+																	
 																</a>
 																<ul class="dropdown-menu">
 																	<li>
@@ -3846,6 +3848,16 @@
 
 	<!-- Examples -->
 	<script src="js/examples/examples.instagramFeed.js"></script>
+
+
+
+
+	<script>
+		let client = document.getElementById('navss');
+		fetch('./api/maintitles/getbyid?id=1') 
+               .then(message => message.json()) 
+				.then(data => client.innerHTML=data.data.name);
+	</script>
 
 </body>
 
