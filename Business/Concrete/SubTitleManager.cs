@@ -40,6 +40,11 @@ namespace Business.Concrete
             return new SuccessDataResult<SubTitle>(_subTitleDal.Get(p => p.Id == id));
         }
 
+        public IDataResult<List<SubTitle>> getByMainTitleId(int mainTitleId)
+        {
+            return new SuccessDataResult<List<SubTitle>>(_subTitleDal.GetAll(p => p.MainTitleId == mainTitleId));
+        }
+
         public IResult update(SubTitle subTitle)
         {
             _subTitleDal.Update(subTitle);

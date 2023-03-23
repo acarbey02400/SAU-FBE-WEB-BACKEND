@@ -25,6 +25,8 @@ namespace Business.DependencyResolves.Autofac
             //SingleInstance ben ekledim
             builder.RegisterType<UserManager>().As<IUserService>();
             builder.RegisterType<EfUserDal>().As<IUserDal>();
+            builder.RegisterType<SubTitleManager>().As<ISubTitleService>();
+            builder.RegisterType<EfSubTitleDal>().As<ISubTitleDal>();
             builder.RegisterType<MainTitleManager>().As<IMainTitleService>();
             builder.RegisterType<EfMainTitleDal>().As<IMainTitleDal>();
             builder.RegisterType<AcademicDegreeManager>().As<IAcademicDegreeService>();

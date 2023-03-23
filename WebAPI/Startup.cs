@@ -33,7 +33,8 @@ namespace WebAPI
         {
             services.AddRazorPages();
             services.AddControllers();
-          
+            services.AddSwaggerGen();
+
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -60,7 +61,7 @@ namespace WebAPI
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                                   policy =>
                                   {
-                                      policy.WithOrigins("http://localhost:3000");
+                                      policy.WithOrigins("http://127.0.0.1:5500");
                                   });
             });
         }
@@ -81,7 +82,15 @@ namespace WebAPI
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSwagger(c =>
+            {
+                c.SerializeAsV2 = true;
+            });
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.RoutePrefix = string.Empty;
+            });
             app.UseRouting();
             app.UseAuthentication();
             app.UseCors(MyAllowSpecificOrigins);

@@ -15,5 +15,6 @@ namespace Business.Abstract
         public IResult delete(SubTitle subTitle);
         public IDataResult<List<SubTitle>> getAll();
         public IDataResult<SubTitle> getById(int id);
+        public IDataResult<List<SubTitle>> getByMainTitleId(int mainTitleId);
     }
 }
